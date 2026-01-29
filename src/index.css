@@ -2,95 +2,92 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Kingdom of Love International Design System
+   Color Palette:
+   - Deep Brown: #9D5C0D (primary)
+   - Harvest Gold: #E5890A (accent/secondary)
+   - Light Gold: #F7D08A (warm highlight)
+   - Pure White: #FAFAFA (background)
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core palette */
+    --deep-brown: 30 88% 33%;
+    --harvest-gold: 35 92% 47%;
+    --light-gold: 40 88% 76%;
+    --pure-white: 0 0% 98%;
+    --cream: 45 30% 96%;
+    --dark-text: 30 30% 15%;
+    
+    /* Semantic tokens */
+    --background: 0 0% 98%;
+    --foreground: 30 30% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 30 30% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 30 30% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 30 88% 33%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 35 92% 47%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 45 30% 96%;
+    --muted-foreground: 30 20% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 40 88% 76%;
+    --accent-foreground: 30 30% 15%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 40 30% 88%;
+    --input: 40 30% 88%;
+    --ring: 30 88% 33%;
 
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(35 92% 47%) 0%, hsl(40 88% 76%) 100%);
+    --gradient-warm: linear-gradient(180deg, hsl(45 30% 96%) 0%, hsl(0 0% 98%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(30 88% 33% / 0.9) 0%, hsl(35 92% 47% / 0.8) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(30 88% 33% / 0.1);
+    --shadow-gold: 0 8px 30px hsl(35 92% 47% / 0.2);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 30 30% 8%;
+    --foreground: 0 0% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 30 25% 12%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 30 25% 12%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 35 92% 47%;
+    --primary-foreground: 30 30% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 30 88% 33%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 30 20% 18%;
+    --muted-foreground: 40 20% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 40 88% 76%;
+    --accent-foreground: 30 30% 8%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 30 20% 22%;
+    --input: 30 20% 22%;
+    --ring: 35 92% 47%;
   }
 }
 
@@ -100,6 +97,89 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-tight;
+  }
+}
+
+@layer components {
+  /* Animated nav link with underline */
+  .nav-link {
+    @apply relative font-medium text-foreground/80 transition-colors duration-300;
+  }
+  
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-0.5 bg-secondary scale-x-0 origin-right transition-transform duration-300;
+  }
+  
+  .nav-link:hover {
+    @apply text-foreground;
+  }
+  
+  .nav-link:hover::after {
+    @apply scale-x-100 origin-left;
+  }
+  
+  /* Hero button variants */
+  .btn-kingdom {
+    @apply px-8 py-4 rounded-lg font-semibold text-base transition-all duration-300;
+    @apply bg-secondary text-white shadow-lg;
+    @apply hover:shadow-xl hover:scale-105 hover:brightness-110;
+  }
+  
+  .btn-kingdom-outline {
+    @apply px-8 py-4 rounded-lg font-semibold text-base transition-all duration-300;
+    @apply border-2 border-primary text-primary bg-transparent;
+    @apply hover:bg-primary hover:text-white;
+  }
+  
+  /* Section styles */
+  .section-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold font-serif text-foreground;
+  }
+  
+  .section-subheading {
+    @apply text-lg md:text-xl text-muted-foreground max-w-3xl;
+  }
+  
+  /* Card hover effect */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  /* Gold accent line */
+  .gold-line {
+    @apply w-20 h-1 bg-secondary rounded-full;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-gold);
+  }
+  
+  .bg-gradient-gold {
+    background-image: var(--gradient-gold);
+  }
+  
+  .bg-gradient-warm {
+    background-image: var(--gradient-warm);
+  }
+  
+  .bg-gradient-hero {
+    background-image: var(--gradient-hero);
+  }
+  
+  .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-sans {
+    font-family: 'Inter', system-ui, sans-serif;
   }
 }
