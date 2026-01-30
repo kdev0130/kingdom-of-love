@@ -3,6 +3,7 @@ interface SectionHeadingProps {
   subtitle?: string;
   centered?: boolean;
   light?: boolean;
+  titleColor?: string;
 }
 
 const SectionHeading = ({
@@ -10,14 +11,16 @@ const SectionHeading = ({
   subtitle,
   centered = true,
   light = false,
+  titleColor,
 }: SectionHeadingProps) => {
   return (
     <div className={`mb-12 ${centered ? "text-center" : ""}`}>
       <div className={`gold-line mb-6 ${centered ? "mx-auto" : ""}`} />
       <h2
         className={`font-serif text-3xl md:text-4xl lg:text-5xl font-bold mb-4 ${
-          light ? "text-background" : "text-foreground"
+          titleColor ? "" : (light ? "text-background" : "text-foreground")
         }`}
+        style={titleColor ? { color: titleColor } : undefined}
       >
         {title}
       </h2>

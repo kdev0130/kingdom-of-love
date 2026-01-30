@@ -18,7 +18,7 @@ const AboutUs = () => {
       <section className="py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <SectionHeading title="Our Origins" />
+            <SectionHeading title="Our Origins" titleColor="#9D5C0D" />
 
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
@@ -28,7 +28,7 @@ const AboutUs = () => {
                 discipline.
               </p>
 
-              <p className="text-lg text-foreground leading-relaxed font-medium mb-6">
+              <p className="text-lg text-[#9D5C0D] leading-relaxed font-medium mb-6">
                 Today, we have evolved into Kingdom of Love International—a borderless nation where
                 love and shared responsibility are the primary currencies.
               </p>
@@ -48,14 +48,14 @@ const AboutUs = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <div className="w-20 h-1 bg-accent rounded-full mx-auto mb-6" />
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+            <h2 className="font-sans text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
               A NATION READY TO RISE
             </h2>
             <p className="text-xl leading-relaxed opacity-90 mb-8">
               We are not a dream of the future; we are a reality of today. We are a pre-built
               community of 250,000 citizens who share a vision of an economy that serves the people.
             </p>
-            <div className="text-6xl md:text-8xl font-serif font-bold text-accent mb-4">
+            <div className="text-6xl md:text-8xl font-sans font-bold text-accent mb-4">
               250,000+
             </div>
             <p className="text-lg opacity-80">
@@ -78,7 +78,7 @@ const AboutUs = () => {
               <div className="w-20 h-20 rounded-full bg-gradient-gold flex items-center justify-center mx-auto mb-6">
                 <span className="text-3xl">❤️</span>
               </div>
-              <h3 className="font-serif text-xl font-bold mb-3">Love</h3>
+              <h3 className="font-sans text-xl font-bold mb-3 text-foreground">Love</h3>
               <p className="text-muted-foreground">
                 At the heart of everything we do is unconditional love for humanity.
               </p>
@@ -88,7 +88,7 @@ const AboutUs = () => {
               <div className="w-20 h-20 rounded-full bg-gradient-gold flex items-center justify-center mx-auto mb-6">
                 <span className="text-3xl">🤝</span>
               </div>
-              <h3 className="font-serif text-xl font-bold mb-3">Unity</h3>
+              <h3 className="font-sans text-xl font-bold mb-3 text-foreground">Unity</h3>
               <p className="text-muted-foreground">
                 When one grows, we all grow. Our strength lies in our togetherness.
               </p>
@@ -98,7 +98,7 @@ const AboutUs = () => {
               <div className="w-20 h-20 rounded-full bg-gradient-gold flex items-center justify-center mx-auto mb-6">
                 <span className="text-3xl">📚</span>
               </div>
-              <h3 className="font-serif text-xl font-bold mb-3">Discipline</h3>
+              <h3 className="font-sans text-xl font-bold mb-3 text-foreground">Discipline</h3>
               <p className="text-muted-foreground">
                 True freedom comes through the discipline of economic understanding.
               </p>
@@ -108,7 +108,7 @@ const AboutUs = () => {
               <div className="w-20 h-20 rounded-full bg-gradient-gold flex items-center justify-center mx-auto mb-6">
                 <span className="text-3xl">🌱</span>
               </div>
-              <h3 className="font-serif text-xl font-bold mb-3">Growth</h3>
+              <h3 className="font-sans text-xl font-bold mb-3 text-foreground">Growth</h3>
               <p className="text-muted-foreground">
                 We believe in sustainable, lasting growth that benefits all.
               </p>
@@ -135,7 +135,7 @@ const AboutUs = () => {
                   <div className="w-0.5 h-full bg-border mt-4" />
                 </div>
                 <div className="pb-12">
-                  <h3 className="font-serif text-xl font-bold mb-2">The Beginning</h3>
+                  <h3 className="font-sans text-xl font-bold mb-2 text-foreground">The Beginning</h3>
                   <p className="text-muted-foreground">
                     Started in the fields, working directly with farmers and fishermen to understand
                     the real barriers to prosperity.
@@ -151,7 +151,7 @@ const AboutUs = () => {
                   <div className="w-0.5 h-full bg-border mt-4" />
                 </div>
                 <div className="pb-12">
-                  <h3 className="font-serif text-xl font-bold mb-2">The Discovery</h3>
+                  <h3 className="font-sans text-xl font-bold mb-2 text-foreground">The Discovery</h3>
                   <p className="text-muted-foreground">
                     Identified that economic discipline, not just money, was the key to lasting change.
                   </p>
@@ -166,7 +166,7 @@ const AboutUs = () => {
                   <div className="w-0.5 h-full bg-border mt-4" />
                 </div>
                 <div className="pb-12">
-                  <h3 className="font-serif text-xl font-bold mb-2">The Evolution</h3>
+                  <h3 className="font-sans text-xl font-bold mb-2 text-foreground">The Evolution</h3>
                   <p className="text-muted-foreground">
                     Transformed into Kingdom of Love International—a borderless nation of shared purpose.
                   </p>
@@ -180,7 +180,7 @@ const AboutUs = () => {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-serif text-xl font-bold mb-2">The Future</h3>
+                  <h3 className="font-sans text-xl font-bold mb-2 text-foreground">The Future</h3>
                   <p className="text-muted-foreground">
                     Continuing to grow, empower, and ensure no one is left behind.
                   </p>

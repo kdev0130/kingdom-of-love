@@ -104,11 +104,12 @@ const DonateNow = () => {
                       {donationAmounts.map((amount) => (
                         <button
                           key={amount}
+                          disabled
                           onClick={() => handleAmountSelect(amount)}
-                          className={`py-3 px-4 rounded-lg font-semibold transition-all duration-200 ${
+                          className={`py-3 px-4 rounded-lg font-semibold transition-all duration-200 opacity-50 cursor-not-allowed ${
                             selectedAmount === amount
                               ? "bg-secondary text-secondary-foreground"
-                              : "bg-muted text-foreground hover:bg-muted/80"
+                              : "bg-muted text-foreground"
                           }`}
                         >
                           ${amount}
@@ -128,10 +129,11 @@ const DonateNow = () => {
                       </span>
                       <input
                         type="number"
+                        disabled
                         value={customAmount}
                         onChange={(e) => handleCustomAmount(e.target.value)}
                         placeholder="Enter amount"
-                        className="w-full pl-8 pr-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-secondary transition-all"
+                        className="w-full pl-8 pr-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-secondary transition-all opacity-50 cursor-not-allowed"
                       />
                     </div>
                   </div>
@@ -144,8 +146,9 @@ const DonateNow = () => {
                       </label>
                       <input
                         type="text"
+                        disabled
                         placeholder="Enter your name"
-                        className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-secondary transition-all"
+                        className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-secondary transition-all opacity-50 cursor-not-allowed"
                       />
                     </div>
                     <div>
@@ -154,8 +157,9 @@ const DonateNow = () => {
                       </label>
                       <input
                         type="email"
+                        disabled
                         placeholder="Enter your email"
-                        className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-secondary transition-all"
+                        className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-secondary transition-all opacity-50 cursor-not-allowed"
                       />
                     </div>
                   </div>
@@ -171,11 +175,15 @@ const DonateNow = () => {
                   </div>
 
                   {/* Submit Button */}
-                  <button className="w-full btn-kingdom text-center">
+                  <button disabled className="w-full btn-kingdom text-center opacity-50 cursor-not-allowed">
                     Complete Donation
                   </button>
 
-                  <p className="text-xs text-center text-muted-foreground mt-4">
+                  <p className="text-sm text-center text-secondary font-medium mt-4">
+                    💫 Donations coming soon! KOLI is currently in progress.
+                  </p>
+
+                  <p className="text-xs text-center text-muted-foreground mt-2">
                     Your donation is secure and encrypted. Thank you for your generosity.
                   </p>
                 </div>
@@ -260,16 +268,27 @@ const DonateNow = () => {
       {/* Testimonial */}
       <section className="py-24">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="text-6xl mb-6">❝</div>
-            <blockquote className="font-serif text-2xl md:text-3xl text-foreground leading-relaxed mb-8">
-              When I joined the Kingdom, I was just a fisherman hoping for better days. Today, I
-              understand finance, I trade globally, and my family's future is secure. This is what
-              the Kingdom does—it transforms.
-            </blockquote>
-            <cite className="text-muted-foreground not-italic">
-              — Ramon, Community Member since 2022
-            </cite>
+          <div className="max-w-4xl mx-auto">
+            <div className="card card-side bg-card shadow-soft border border-border">
+              <figure className="w-1/3">
+                <img
+                  src="/src/assets/ramon real.png"
+                  alt="Ramon, Community Member"
+                  className="h-full object-cover"
+                />
+              </figure>
+              <div className="card-body w-2/3 flex flex-col justify-center">
+                <div className="text-4xl mb-4">❝</div>
+                <blockquote className="font-serif text-lg md:text-xl text-foreground leading-relaxed mb-4">
+                  When I joined the Kingdom, I was just a fisherman hoping for better days. Today, I
+                  understand finance, I trade globally, and my family's future is secure. This is what
+                  the Kingdom does—it transforms.
+                </blockquote>
+                <cite className="text-muted-foreground not-italic font-medium">
+                  — Ramon, Community Member since 2022
+                </cite>
+              </div>
+            </div>
           </div>
         </div>
       </section>

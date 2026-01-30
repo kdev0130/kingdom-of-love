@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import logoIcon from "@/assets/logo-icon.png";
 
 const Footer = () => {
+  const [showAlert, setShowAlert] = useState(false);
+  const [activePolicyAlert, setActivePolicyAlert] = useState<string | null>(null);
   return (
     <footer className="bg-primary text-primary-foreground">
       {/* Main Footer */}
       <div className="container mx-auto px-4 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-3 mb-6">
@@ -18,7 +21,7 @@ const Footer = () => {
                 />
               </div>
               <div>
-                <h3 className="font-serif text-lg font-bold">Kingdom of Love</h3>
+                <h3 className="font-sans text-lg font-bold">Kingdom of Love</h3>
                 <span className="text-xs tracking-widest opacity-70 uppercase">
                   International
                 </span>
@@ -30,8 +33,8 @@ const Footer = () => {
           </div>
 
           {/* Navigation */}
-          <nav>
-            <h6 className="font-serif font-semibold text-lg mb-4">Navigation</h6>
+          <nav className="lg:col-span-1">
+            <h6 className="font-sans font-semibold text-lg mb-4">Navigation</h6>
             <div className="flex flex-col gap-3">
               <Link to="/about" className="text-sm opacity-80 hover:opacity-100 transition-opacity">
                 About Us
@@ -42,71 +45,131 @@ const Footer = () => {
               <Link to="/donate" className="text-sm opacity-80 hover:opacity-100 transition-opacity">
                 Donate Now
               </Link>
-              <Link to="/" className="text-sm opacity-80 hover:opacity-100 transition-opacity">
-                Community Empowerment
+              <Link to="/koli" className="text-sm opacity-80 hover:opacity-100 transition-opacity">
+                KOLI
               </Link>
             </div>
           </nav>
 
-          {/* Resources */}
-          <nav>
-            <h6 className="font-serif font-semibold text-lg mb-4">Resources</h6>
+          {/* Visit KOLI Coin */}
+          <nav className="lg:col-span-1">
+            <h6 className="font-sans font-semibold text-lg mb-4">Visit KOLI Coin</h6>
             <div className="flex flex-col gap-3">
-              <a href="#" className="text-sm opacity-80 hover:opacity-100 transition-opacity">
-                Roadmap
+              <a href="/koli" className="text-sm opacity-80 hover:opacity-100 transition-opacity">
+                Explore KOLI
               </a>
-              <a href="#" className="text-sm opacity-80 hover:opacity-100 transition-opacity">
-                KOLI Coin
+              <a href="http://192.168.1.37:8080/" target="_blank" rel="noopener noreferrer" className="text-sm opacity-80 hover:opacity-100 transition-opacity">
+                KOLI Platform
               </a>
-              <a href="#" className="text-sm opacity-80 hover:opacity-100 transition-opacity">
-                Press Kit
-              </a>
-              <a href="#" className="text-sm opacity-80 hover:opacity-100 transition-opacity">
-                Contact
-              </a>
+            </div>
+          </nav>
+
+          {/* Policies */}
+          <nav className="lg:col-span-1">
+            <h6 className="font-sans font-semibold text-lg mb-4">Policies</h6>
+            <div className="flex flex-col gap-3">
+              <div className="relative">
+                <a 
+                  href="#" 
+                  onMouseEnter={() => setActivePolicyAlert("privacy")}
+                  onMouseLeave={() => setActivePolicyAlert(null)}
+                  className="text-sm opacity-80 hover:opacity-100 transition-opacity block"
+                >
+                  Privacy Policy
+                </a>
+                {activePolicyAlert === "privacy" && (
+                  <div className="absolute bottom-full left-0 mb-2 bg-white text-black text-xs px-2 py-1 rounded whitespace-nowrap z-50">
+                    Coming Soon
+                  </div>
+                )}
+              </div>
+              <div className="relative">
+                <a 
+                  href="#" 
+                  onMouseEnter={() => setActivePolicyAlert("terms")}
+                  onMouseLeave={() => setActivePolicyAlert(null)}
+                  className="text-sm opacity-80 hover:opacity-100 transition-opacity block"
+                >
+                  Terms of Service
+                </a>
+                {activePolicyAlert === "terms" && (
+                  <div className="absolute bottom-full left-0 mb-2 bg-white text-black text-xs px-2 py-1 rounded whitespace-nowrap z-50">
+                    Coming Soon
+                  </div>
+                )}
+              </div>
+              <div className="relative">
+                <a 
+                  href="#" 
+                  onMouseEnter={() => setActivePolicyAlert("cookie")}
+                  onMouseLeave={() => setActivePolicyAlert(null)}
+                  className="text-sm opacity-80 hover:opacity-100 transition-opacity block"
+                >
+                  Cookie Policy
+                </a>
+                {activePolicyAlert === "cookie" && (
+                  <div className="absolute bottom-full left-0 mb-2 bg-white text-black text-xs px-2 py-1 rounded whitespace-nowrap z-50">
+                    Coming Soon
+                  </div>
+                )}
+              </div>
+              <div className="relative">
+                <a 
+                  href="#" 
+                  onMouseEnter={() => setActivePolicyAlert("disclaimer")}
+                  onMouseLeave={() => setActivePolicyAlert(null)}
+                  className="text-sm opacity-80 hover:opacity-100 transition-opacity block"
+                >
+                  Disclaimer
+                </a>
+                {activePolicyAlert === "disclaimer" && (
+                  <div className="absolute bottom-full left-0 mb-2 bg-white text-black text-xs px-2 py-1 rounded whitespace-nowrap z-50">
+                    Coming Soon
+                  </div>
+                )}
+              </div>
             </div>
           </nav>
 
           {/* Social */}
           <div>
-            <h6 className="font-serif font-semibold text-lg mb-4">Connect With Us</h6>
-            <div className="flex gap-4">
+            <h6 className="font-sans font-semibold text-lg mb-4">Connect With Us</h6>
+            <div className="flex items-center gap-4 relative">
+              {/* Telegram */}
               <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-background/20 transition-colors"
-                aria-label="Telegram"
+                href="https://t.me/kingdomoflove"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-lg bg-background/10 hover:bg-background/20 transition-colors"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
                 </svg>
               </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-background/20 transition-colors"
-                aria-label="X (Twitter)"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                </svg>
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-background/20 transition-colors"
-                aria-label="Instagram"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                </svg>
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-background/20 transition-colors"
-                aria-label="Facebook"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
-                </svg>
-              </a>
+              {/* YouTube */}
+              <div className="relative">
+                <button
+                  onMouseEnter={() => setShowAlert(true)}
+                  onMouseLeave={() => setShowAlert(false)}
+                  className="p-3 rounded-lg bg-background/10 hover:bg-background/20 transition-colors cursor-pointer"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 00-2.122 2.136C0 8.07 0 12 0 12s0 3.93.379 5.814a3.016 3.016 0 002.122 2.136c1.872.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                  </svg>
+                </button>
+                {/* Alert */}
+                {showAlert && (
+                  <div role="alert" className="alert alert-vertical sm:alert-horizontal absolute bottom-full left-0 mb-2 animate-in fade-in duration-300 w-80 z-50">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="stroke-info h-6 w-6 shrink-0">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <div>
+                      <h3 className="font-bold">Coming Soon!</h3>
+                      <div className="text-xs">YouTube channel is coming soon</div>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -119,7 +182,7 @@ const Footer = () => {
             <p className="text-sm opacity-70">
               © {new Date().getFullYear()} Kingdom of Love International. All rights reserved.
             </p>
-            <p className="text-sm font-serif italic opacity-80">
+            <p className="text-sm font-sans italic opacity-80">
               One Kingdom. One Love. One Abundance.
             </p>
           </div>

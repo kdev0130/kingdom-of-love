@@ -8,9 +8,9 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className="min-h-screen flex flex-col" data-theme="kingdom">
+    <div className="min-h-screen flex flex-col" data-theme="kingdom" style={{ backgroundColor: '#FAFAFA' }}>
       <Navbar />
-      <main className="flex-1">{children}</main>
+      <main className="flex-1" style={{ backgroundColor: '#FAFAFA' }}>{children}</main>
       <Footer />
     </div>
   );

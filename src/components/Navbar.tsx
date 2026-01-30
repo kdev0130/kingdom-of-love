@@ -11,6 +11,7 @@ const Navbar = () => {
     { name: "About Us", path: "/about" },
     { name: "What We Do", path: "/what-we-do" },
     { name: "Donate Now", path: "/donate" },
+    { name: "KOLI", path: "/koli" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -18,7 +19,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-20 relative">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <div className="w-12 h-12 rounded-full overflow-hidden transition-transform duration-300 group-hover:scale-110">
@@ -28,7 +29,7 @@ const Navbar = () => {
                 className="w-full h-full object-contain"
               />
             </div>
-            <div className="hidden sm:block">
+            <div className="block">
               <span className="text-xs font-medium tracking-widest text-muted-foreground uppercase">
                 The
               </span>
@@ -52,6 +53,7 @@ const Navbar = () => {
                     ? "text-foreground after:scale-x-100"
                     : ""
                 }`}
+                style={link.name === "KOLI" ? { color: "rgb(229, 137, 10)" } : {}}
               >
                 {link.name}
               </Link>
@@ -69,6 +71,7 @@ const Navbar = () => {
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
+              style={{ stroke: "#9D5C0D" }}
             >
               {isMenuOpen ? (
                 <path
@@ -90,28 +93,30 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Navigation */}
-        <div
-          className={`md:hidden overflow-hidden transition-all duration-300 ${
-            isMenuOpen ? "max-h-64 pb-4" : "max-h-0"
-          }`}
-        >
-          <div className="flex flex-col gap-2">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                onClick={() => setIsMenuOpen(false)}
-                className={`px-4 py-3 rounded-lg text-sm tracking-wide uppercase transition-colors ${
-                  isActive(link.path)
-                    ? "bg-secondary text-secondary-foreground"
-                    : "hover:bg-muted"
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
+        {isMenuOpen && (
+          <div className="absolute top-full left-0 right-0 md:hidden bg-background/95 backdrop-blur-md border-b border-border z-50">
+            <div className="flex flex-col gap-2 p-4">
+              {navLinks.map((link) => (
+                <div key={link.path} className="px-4">
+                  <Link
+                    to={link.path}
+                    onClick={() => setIsMenuOpen(false)}
+                    className={`nav-link inline-block py-3 text-sm tracking-wide uppercase transition-colors ${
+                      isActive(link.path) ? "after:scale-x-100" : ""
+                    }`}
+                    style={
+                      link.name === "KOLI"
+                        ? { color: "rgb(229, 137, 10)", fontWeight: "600" }
+                        : { color: "#1a1a1a", fontWeight: "500" }
+                    }
+                  >
+                    {link.name}
+                  </Link>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </nav>
   );
