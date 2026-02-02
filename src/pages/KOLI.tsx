@@ -37,7 +37,7 @@ const KOLI = () => {
             </div>
 
             <a
-              href="http://192.168.1.37:8080/"
+              href="https://koli-coin.io/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block mt-8 px-8 py-4 rounded-lg font-semibold bg-accent text-accent-foreground hover:brightness-110 transition-all duration-300"

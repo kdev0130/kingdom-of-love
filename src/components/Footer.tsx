@@ -58,7 +58,7 @@ const Footer = () => {
               <a href="/koli" className="text-sm opacity-80 hover:opacity-100 transition-opacity">
                 Explore KOLI
               </a>
-              <a href="http://192.168.1.37:8080/" target="_blank" rel="noopener noreferrer" className="text-sm opacity-80 hover:opacity-100 transition-opacity">
+              <a href="https://koli-coin.io/" target="_blank" rel="noopener noreferrer" className="text-sm opacity-80 hover:opacity-100 transition-opacity">
                 KOLI Platform
               </a>
             </div>
