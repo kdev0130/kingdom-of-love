@@ -137,7 +137,7 @@ const Footer = () => {
             <div className="flex items-center gap-4 relative">
               {/* Telegram */}
               <a
-                href="https://t.me/kingdomoflove"
+                href="https://t.me/+rd5fNLu4zOhmMTg1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-lg bg-background/10 hover:bg-background/20 transition-colors"
