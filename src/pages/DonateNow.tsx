@@ -272,7 +272,7 @@ const DonateNow = () => {
             <div className="card card-side bg-card shadow-soft border border-border">
               <figure className="w-1/3">
                 <img
-                  src="/src/assets/ramon real.png"
+                  src="/src/assets/ramon-real.png"
                   alt="Ramon, Community Member"
                   className="h-full object-cover"
                 />
