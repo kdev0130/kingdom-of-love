@@ -3,6 +3,7 @@ import Layout from "@/components/Layout";
 import HeroSection from "@/components/HeroSection";
 import SectionHeading from "@/components/SectionHeading";
 import heroDonate from "@/assets/hero-donate.jpg";
+import ramonReal from "@/assets/ramon-real.png";
 
 const DonateNow = () => {
   const [selectedAmount, setSelectedAmount] = useState<number | null>(50);
@@ -272,7 +273,7 @@ const DonateNow = () => {
             <div className="card card-side bg-card shadow-soft border border-border">
               <figure className="w-1/3">
                 <img
-                  src="/src/assets/ramon-real.png"
+                  src={ramonReal}
                   alt="Ramon, Community Member"
                   className="h-full object-cover"
                 />
